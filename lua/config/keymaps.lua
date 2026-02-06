@@ -14,3 +14,15 @@ vim.keymap.set("n", "<leader>cf", ':let @+ = expand("%")<CR>', { desc = "Copy fi
 vim.keymap.set("n", "<leader>cF", ':let @+ = expand("%:p")<CR>', { desc = "Copy full path" })
 -- Save with Cmd+S (macOS)
 vim.keymap.set({ "n", "i", "v" }, "<D-s>", "<Esc>:w<CR>", { desc = "Save file" })
+
+-- Cycle buffers with Tab and Shift-Tab
+vim.keymap.set("n", "<Tab>", ":bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", { desc = "Previous buffer" })
+
+vim.keymap.set("n", "gh", vim.lsp.buf.hover, { desc = "Hover documentation" })
+-- Or leader+w (space+w)
+-- Close buffer but keep window
+vim.keymap.set("n", "<leader>w", ":bp | bd #<CR>", { desc = "Delete buffer, keep window" })
+
+-- Go to definition in vertical split
+vim.keymap.set("n", "<leader>gv", ":vsplit | lua vim.lsp.buf.definition()<CR>", { desc = "Definition in vsplit" })
