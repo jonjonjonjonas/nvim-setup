@@ -22,7 +22,10 @@ vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", { desc = "Previous buffer" })
 vim.keymap.set("n", "gh", vim.lsp.buf.hover, { desc = "Hover documentation" })
 -- Or leader+w (space+w)
 -- Close buffer but keep window
-vim.keymap.set("n", "<leader>a", ":bp | bd #<CR>", { desc = "Delete buffer, keep window" })
+vim.keymap.set("n", "<leader>z", ":bp | bd #<CR>", { desc = "Delete buffer, keep window" })
 
 -- Go to definition in vertical split
 vim.keymap.set("n", "gv", ":vsplit | lua vim.lsp.buf.definition()<CR>", { desc = "Definition in vsplit" })
+
+-- Claude Code
+vim.keymap.set("n", "<C-c>", "<cmd>ClaudeCode<CR>", { desc = "Toggle Claude Code" })
